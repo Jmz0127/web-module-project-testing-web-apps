@@ -55,7 +55,7 @@ test('renders "email must be a valid email address" if an invalid email is enter
 	const submitButton = screen.getByRole('button');
 	userEvent.click(submitButton);
 
-	const errorMessage = await screen.findByText('Error: email must be a valid email address.');
+	const errorMessage = await screen.findByText(/email must be a valid email address/);
 	expect(errorMessage).toBeInTheDocument();
 });
 
